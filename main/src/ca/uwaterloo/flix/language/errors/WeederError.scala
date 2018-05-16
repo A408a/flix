@@ -498,7 +498,18 @@ object WeederError {
       vt << Line(kind, source.format) << NewLine
       vt << ">> Illegal vector length. " << NewLine
       vt << NewLine
-      vt << Code(loc, "Illegal vector length.") << NewLine
+      vt << Code(loc, "Vector length must be an integer of minimum 0.") << NewLine
+    }
+  }
+
+  case class IllegalVectorIndex(loc: SourceLocation) extends WeederError {
+    val source: Source = loc.source
+    val message: VirtualTerminal = {
+      val vt = new VirtualTerminal
+      vt << Line(kind, source.format) << NewLine
+      vt << ">> Illegal vector index. " << NewLine
+      vt << NewLine
+      vt << Code(loc, "Illegal vector index.") << NewLine
     }
   }
 
