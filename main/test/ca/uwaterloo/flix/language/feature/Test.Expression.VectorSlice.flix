@@ -77,4 +77,11 @@ def testVectorSlice25(): Vector[Vector[Int, 1], 1] = let x = [|[|1|], [|2|]|]; x
 def testVectorSlice26(): Vector[Vector[Int, 3], 2] = let x = [|[|1, 2, 3|], [|1, 2, 3|], [|1, 2, 3|]|]; x[|0..2|]
 
 @test
-def testVectorSlice27(): Vector[Int, 9] = let x = [|1, 2, 3, 4, 5, 6, 7, 8, 9, 10|]; x[0..length[|x|]]
+def testVectorSlice27(): Vector[Int, 10] = let x = [|1, 2, 3, 4, 5, 6, 7, 8, 9, 10|]; x[0..length[|x|]]
+
+@test
+def testVectorSlice28(): Vector[Str, 4] = {
+let x = [|"Str";10|];
+let y = x[|0..7|];
+y[|3..7|]
+}
