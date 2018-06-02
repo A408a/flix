@@ -1366,8 +1366,7 @@ object Typer extends Phase[ResolvedAst.Program, TypedAst.Root] {
           val e = visitExp(base, subst0)
           optEndIndex match {
             case None =>
-              val len = TypedAst.Expression.VectorLength(e, Type.Int32, Eff.Bot, loc)
-              TypedAst.Expression.VectorSlice(e, startIndex, len , subst0(tvar), Eff.Bot, loc)
+              TypedAst.Expression.VectorSlice(e, startIndex, TypedAst.Expression.VectorLength(e, Type.Int32, Eff.Bot, loc), subst0(tvar), Eff.Bot, loc)
             case Some(endIndex) =>
               val len = TypedAst.Expression.Int32(endIndex, loc)
               TypedAst.Expression.VectorSlice(e, startIndex, len, subst0(tvar), Eff.Bot, loc)

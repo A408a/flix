@@ -77,13 +77,7 @@ def testArraySlice25(): Array[Array[Int]] = let x = [[1, 2, 3, 4, 5], [2]]; x[0.
 def testArraySlice26(): Array[Array[Int]] = let x = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]; x[0..3]
 
 @test
-def testArraySlice27(): Array[Vector[Int, 3]] = let x = [[|1, 2, 3|], [|1, 2, 3|] ]; x[1..2]
+def testArraySlice27(): Array[Int] = let x = [5;7]; let y = [5;7]; x[3..y[1]]
 
 @test
-def testArraySlice28(): Array[(List[Int])] = let x = [(1 :: Nil), (2 :: Nil)]; x[1..2]
-
-@test
-def testArraySlice29(): Array[(Bool, Bool)] = let x = [(true, true), (true, false), (true, true)]; x[1..2]
-
-@test
-def testArraySlice30(): Array[Option[Int]] = let x = [Some(1), Some(2), Some(3), Some(4), None]; x[1..2]
+def testArraySlice28(): Int = let x = [5;7]; x[3..5][0]
