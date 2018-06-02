@@ -4,7 +4,6 @@ def testArrayLit01(): Array[Unit] = []
 @test
 def testArrayLit02(): Array[Int] = [1]
 
-
 @test
 def testArrayLit04(): Array[Int] = [1, 2, 3, 4]
 
@@ -254,42 +253,18 @@ def testArrayLit85(): Array[(List[Int])] = [(Nil)]
 @test
 def testArrayLit86(): Array[(List[Int])] = [(1 :: Nil)]
 
+@test
+def testArrayLit88(): Array[Option[Str]] = [Some("Hello World")]
+
+@test
+def testArrayLit89(): Array[Option[Int]] = [Some(1), Some(2), None]
+
+@test
+def testArrayLit90(): Array[Vector[Int, 4]] = [[|1, 2, 3, 4|]]
+
 enum Color {
     case Red,
     case Green,
     case Blue
 }
-
-@test
-def testArrayLit88(): Array[Color] = [Color.Red]
-
-@test
-def testArrayLit89(): Array[Color] = [Color.Red, Color.Green, Color.Blue]
-
-@test
-def testArrayLit90(): Array[Vector[Int, 2]] = [[|12, 42|]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
